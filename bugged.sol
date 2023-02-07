@@ -88,7 +88,7 @@ contract W3BVIII{
     }
 
     /// @notice this function only reads from state and makes no changes
-    /// @custom:  CHECK IF THIRD PARTY HAS BEEN APPROVED TO USE HOLDERS TOKENS
+    /// @custom:  CHECK IF THIRD PARTY HAS BEEN APPROVED TO USE HOLDER'S TOKENS
     function _allowance(address _owner, address spender) public view returns(uint amount){
     amount = allowance[_owner][spender];
     }
@@ -106,7 +106,7 @@ contract W3BVIII{
 
 
      /// @custom:  ALLOW TOKEN HOLDERS TO APPROVE THIRD PARTIES TO SPEND THEIR TOKENS
-     /// @dev there is a bug present here
+     /// @dev the approve function overides the previous allowance it may be a bug
     }
     function Approve(address spender, uint amount) public  {
         allowance[msg.sender][spender] = amount;
