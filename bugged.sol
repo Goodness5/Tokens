@@ -105,7 +105,8 @@ contract W3BVIII{
         emit transfer_(from, to, amount);
 
 
-     //  ALLOW TOKEN HOLDERS TO APPROVE THIRD PARTIES TO SPEND THEIR TOKENS
+     /// @custom:  ALLOW TOKEN HOLDERS TO APPROVE THIRD PARTIES TO SPEND THEIR TOKENS
+     /// @dev there is a bug present here
     }
     function Approve(address spender, uint amount) public  {
         allowance[msg.sender][spender] = amount;

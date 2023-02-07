@@ -4,8 +4,7 @@ pragma solidity 0.8.17; // COMPILER VERSION SPECIFIED
 
 /// @title AN ERC20 TOKEN
 /// @author KOLAPO GOODNESS
-/// @notice THIS IS A BUGGY BASIC ERC20 TOKEN 
-/// @dev SOME FUNCTIONS CONTAINS BUGS 
+/// @notice THIS IS A BUGGY BASIC ERC20 TOKEN  
 
 contract W3BVIII{ 
     /// @param OWNER_ADDRESS,
@@ -93,7 +92,6 @@ contract W3BVIII{
     amount = allowance[_owner][spender];
     }
 
-    /// @dev this function contains a bug
     /// @custom: ALLOW THIRD PARTIES TO INITIATE TOKEN TRANSFER IF APPROVED
     function transferFrom(address from, address to, uint amount) public returns(bool success){
         uint value = _allowance(from, msg.sender);
