@@ -9,7 +9,6 @@ contract w3cvii is ERC20{
     // mapping(uint256 => uint256) tokenvalue;
     uint256 tokenvalue = 2 ether;
 
-    
 
     constructor(string memory name, string memory symbol, address _owner) ERC20(name, symbol){
         owner = _owner;

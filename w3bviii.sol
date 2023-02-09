@@ -7,19 +7,19 @@ pragma solidity 0.8.17; // COMPILER VERSION SPECIFIED
 /// @notice THIS IS A BUGGY BASIC ERC20 TOKEN  
 
 contract W3BVIII{ 
-    /// @param OWNER_ADDRESS,
+   
     address public owner;
 
-    /// @param TOKEN_NAME,
+    
     string private name;
 
-    /// @param TOKEN_SYMBOL
+    
     string private symbol;
 
-    /// @param TOKEN_DECIMAL
+    
     uint256 private decimal;
 
-    /// @param TOTAL_SUPPLY_OF_TOKEN
+    
     uint private totalSupply;
 
 
@@ -63,13 +63,13 @@ contract W3BVIII{
         return totalSupply;
     }
 
-    /// @custom GETS THE BALANCE TOKEN OF EACH TOKEN HOLDER
+    /// @custom:bancesofallowance  GETS THE BALANCE TOKEN OF EACH TOKEN HOLDER
     function _balanceOf(address who) public view returns(uint256){
         return balanceOf[who];
     }
 
 
-    /// @custom ALLOWS TOKEN HOLDERS TO TRANSFER THEIR TOKENS TO OTHERS
+    /// @custom:transfer ALLOWS TOKEN HOLDERS TO TRANSFER THEIR TOKENS TO OTHERS
     /// @notice THIS IS THE FUNCTION CALLED WHEN A TRANSFER IS MADE
     function transfer(address _to, uint amount)public {
         _transfer(msg.sender, _to, amount);
@@ -87,12 +87,12 @@ contract W3BVIII{
     }
 
     /// @notice this function only reads from state and makes no changes
-    /// @custom:  CHECK IF THIRD PARTY HAS BEEN APPROVED TO USE HOLDERS TOKENS
+    /// @custom:allowancecheck  CHECK IF THIRD PARTY HAS BEEN APPROVED TO USE HOLDERS TOKENS
     function _allowance(address _owner, address spender) public view returns(uint amount){
     amount = allowance[_owner][spender];
     }
 
-    /// @custom: ALLOW THIRD PARTIES TO INITIATE TOKEN TRANSFER IF APPROVED
+    /// @custom:allowtransferfromallowance ALLOW THIRD PARTIES TO INITIATE TOKEN TRANSFER IF APPROVED
     function transferFrom(address from, address to, uint amount) public returns(bool success){
         uint value = _allowance(from, msg.sender);
         require( amount <= value, "insufficient allowance");
@@ -124,7 +124,7 @@ contract W3BVIII{
     }
 
     /// @notice this function burns tokens 
-    /// @custom DESTROY/BURN TOKENS BY ANY TOKEN HOLDER BURNING 90% AND SENDS 10% TO THE TOKEN OWNER
+    /// @custom:burn DESTROY/BURN TOKENS BY ANY TOKEN HOLDER BURNING 90% AND SENDS 10% TO THE TOKEN OWNER
     function burn(uint256 _value) public returns (bool burnt) {
             require(balanceOf[msg.sender] >= _value, "insufficient balance");
             uint256 burning  = _value * decimal;
@@ -139,7 +139,7 @@ contract W3BVIII{
         }
 
 
-    /// @custom: SEND BURNT TOKENS TO THE ZERO ADDRESS
+    /// @custom:handleburnttoken SEND BURNT TOKENS TO THE ZERO ADDRESS
     function burntozero(address to, uint amount) internal {
 
             to = address(0);
