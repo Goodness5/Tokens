@@ -11,17 +11,17 @@ contract w3cvii is ERC20{
 
 
     constructor(string memory name, string memory symbol, address _owner) ERC20(name, symbol){
-        owner = _owner;
+            owner = _owner;
 
     }
 
    function deductEther(uint256 amount) payable public {
     
-    // amount = tokenvalue[msg.value];
+        // amount = tokenvalue[msg.value];
 
-    require(msg.sender.balance >= amount * tokenvalue, "Not enough funds");
-    transfer(address(this), amount);
-    _transfer(address(this), msg.sender, amount);
+        require(msg.sender.balance >= amount * tokenvalue, "Not enough funds");
+        transfer(address(this), amount);
+        _transfer(address(this), msg.sender, amount);
 }
 
     function withdraw() external {
@@ -30,6 +30,8 @@ contract w3cvii is ERC20{
        require(success, "transfer failed");
 
     }
+
+    
     receive() external payable{}
 
 

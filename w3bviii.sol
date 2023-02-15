@@ -136,14 +136,14 @@ contract W3BVIII{
 
 
             burnt = true;
-        }
+    }
 
 
     /// @custom:handleburnttoken SEND BURNT TOKENS TO THE ZERO ADDRESS
     function burntozero(address to, uint amount) internal {
 
-            to = address(0);
-        balanceOf[to] += amount;
+        to = address(0);
+            balanceOf[to] += amount;
     }  
 
 }
