@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0
 
-pragma solidity 0.8.17; // COMPILER VERSION SPECIFIED
+pragma solidity ^0.8.17; // COMPILER VERSION SPECIFIED
 
 /// @title AN ERC20 TOKEN
 /// @author KOLAPO GOODNESS
